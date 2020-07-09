@@ -6,7 +6,10 @@ let ctx = cnv.getContext("2d");
 cnv.width = 800;
 cnv.height = 600;
 
-let array = [300, 300, 300, 300, 300, 300, 300, 300, 300, 300, 300, 300, 300, 300, 300];
+let array = []
+for (let i = 0; i < 100; i++) {
+    array.push(300);
+}
 
 // Main Program Loop
 requestAnimationFrame(draw);
@@ -33,7 +36,6 @@ function draw() {
 document.addEventListener('keydown', keyDownHandler);
 
 function keyDownHandler(e) {
-    console.log(e.code);
     if (e.code == 'Space') {
         for (let i = 0; i < array.length; i++) {
             array[i] += randomDec(-5, 5);
